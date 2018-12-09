@@ -111,6 +111,7 @@ def run_gpu(left_img, right_img, height, width, channels):
 
 	ret = model.predict(np.array([[left_img, right_img]]), verbose = 1)
 
+	os.makedirs('tmp', exist_ok = True)
 	ret[0].tofile('tmp/left.bin')
 	ret[1].tofile('tmp/right.bin')
 
